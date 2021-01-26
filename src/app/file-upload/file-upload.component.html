@@ -1,0 +1,16 @@
+<div style="width: 400px;">
+    <form [formGroup]="uploadDocForm">
+        <div class="uploadBox">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" (change)="onFileChange($event)"
+                  accept="application/pdf" formControlName="uploadDoc">
+                <label class="custom-file-label"
+                  for="customFile">{{uploadDocForm.get('uploadDoc')?.value?.split("\\").pop()||'Choose File'}}</label>
+              </div>
+        </div>
+        <div class="uploadBtnBox">
+            <button class="btn btn-outline-success" (click)='uploadDoc()'>Upload</button>
+            <button class="btn btn-outline-success">Cancel</button>
+        </div>
+    </form>
+</div>

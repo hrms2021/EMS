@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Employee Leave Details</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Email</th>
+            <th>Leave Balance</th>
+            <th>Total Leaves</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let leave of employeeLeaves">
+            <td>{{leave.employeeId}}</td>
+            <td>{{leave.employeeName}}</td>
+            <td>{{leave.email}}</td>
+            <td>{{leave.leaveBalance}}</td>
+            <td>{{leave.totalLeave}}</td>
+            <!-- <td>
+                <button (click)="employeeDetails(employee.id)" class="btn btn-info mr-1">Details</button>
+                <button (click)="employeeUpdate(employee.id)"  class="btn btn-success mr-1">Update</button>
+                <button (click)="deleteEmployee(employee.id)"  class="btn btn-danger mr-1">Delete</button>
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
