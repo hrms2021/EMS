@@ -1,0 +1,40 @@
+<div style="width: 400px">
+<form   [formGroup]="leavesForm" (ngSubmit)="applyLeaves()" >
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                    <label for="leave-type">Leave Type</label>
+                    <select formControlName="typeOfLeave" name="leave-type" id="leave-type" class="form-control" title="Please select a Leave Type" required="">
+                        <option></option>
+                        <option>Sick Leave</option>
+                        <option>Casual Leave</option>
+                        <option>EBL</option>
+                        <option>Unpaid Leave</option>
+                        <option>Hourly Leave</option>
+                    </select><span class="pmd-textfield-focused"></span>
+                    <div *ngIf ="leavesForm.get('typeOfLeave').touched && leavesForm.get('typeOfLeave').invalid" class="alert alert-danger">Select Leave Type</div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div   class="form-group pmd-textfield pmd-textfield-floating-label">
+                    <label class="control-label" for="datepickerend">No of Days</label>
+                    <input formControlName="noOfDays" type="text" class="form-control" id="noOfDays" name="noOfDays"><span class="pmd-textfield-focused"></span>
+                    <div *ngIf ="leavesForm.get('noOfDays').touched && leavesForm.get('noOfDays').invalid" class="alert alert-danger">Enter No of Days</div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div  class="form-group pmd-textfield pmd-textfield-floating-label">
+                    <label>Reason</label>
+                    <textarea formControlName="reason" class="form-control" id="reason" name="reason"></textarea><span class="pmd-textfield-focused"></span>
+                    <div *ngIf ="leavesForm.get('reason').touched && leavesForm.get('reason').invalid" class="alert alert-danger">Enter Reason</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit"  [disabled]="leavesForm.get('reason').invalid" class="btn btn-primary pmd-ripple-effect pmd-btn-raised" name="applyleave" value="Apply Leave">Apply Leave</button> <a href="leave.html" class="btn btn-outline-secondary pmd-ripple-effect">Cancel</a>
+    </div>
+</form>
+</div>

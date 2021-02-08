@@ -1,0 +1,12 @@
+<app-header-component (logoutVar)="logout($event)" *ngIf="showHead"></app-header-component>
+<div class="container">
+  <br>
+  <h2 class="text-center">{{title}}</h2>
+  <hr>  
+  <div class="card">
+    <div class="card-body">
+  <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
